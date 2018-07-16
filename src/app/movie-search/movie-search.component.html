@@ -1,0 +1,32 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="margin-left:15px; margin-top:10px;">
+  <input type="text" [(ngModel)]="movieName">
+  <button (click)="submit()"> Search Movie </button>
+</div>
+<div *ngIf="results">
+  <div *ngFor="let movie of movies">
+
+    <div class="col-md-12">
+      <a [routerLink]="['/movieDetails' , movie.imdbID]">
+        <div>
+          <span style="float: left; margin-right: 15px;">
+            <img src="{{movie.Poster}}"  width="90" height="130">
+          </span>
+          <h4 style="margin-bottom: 0.4em;">{{movie.Title}}</h4>
+          <div>
+            <p>{{movie.Year}}
+              <br>
+              <br>
+            </p>
+          </div>
+        </div>
+      </a>
+    </div>
+    <br>
+
+    <!-- -->
+  </div>
+</div>
+<div *ngIf="noResults">
+  <br> No Results For This Search
+</div>
