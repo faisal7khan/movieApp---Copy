@@ -1,12 +1,13 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="margin-left:15px; margin-top:10px;">
-  <input type="text" [(ngModel)]="movieName">
+
+<div class="col-md-6" style="margin-left:15px; margin-top:10px;">
+  <input type="text" [(ngModel)]="movieName" placeholder="Enter Movie Name">
   <button (click)="submit()"> Search Movie </button>
 </div>
-<div *ngIf="results">
+<div *ngIf="results" style="margin-left:15px; margin-top:10px;">
   <div *ngFor="let movie of movies">
 
-    <div class="col-md-12">
+    <div class="col-md-12" style="margin-bottom: 10x;">
       <a [routerLink]="['/movieDetails' , movie.imdbID]">
         <div>
           <span style="float: left; margin-right: 15px;">
@@ -27,6 +28,6 @@
     <!-- -->
   </div>
 </div>
-<div *ngIf="noResults">
+<div *ngIf="noResults" style="margin-left:15px; margin-top:10px;">
   <br> No Results For This Search
 </div>
